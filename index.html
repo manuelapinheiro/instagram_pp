@@ -41,9 +41,10 @@
       
       .pp {
         display: block;
-        width: 50vw;
-        position: relative;
-        bottom: 500px;
+        width: 30vw;
+        position: absolute;
+/*         bottom: 500px; */
+        top: 30%;
         left: 50%;
         object-fit: cover;
         border-radius: 50%;
@@ -51,7 +52,7 @@
       }
       
       #me {
-        width: 50vw;
+        width: 30vw;
         border-radius: 50%;
         box-shadow: 4px 0px 49px 9px rgba(0,0,0,0.75);
         margin: auto;
@@ -72,17 +73,23 @@
       .name {
         
         font-size: 3em;
+        color: hsl(323, 100%, 50%);
         font-weight: bold;
-        position: relative;
-        bottom: 600px;
+        position: absolute;
+        top: 50%;
+        left: 35%;
+/*         bottom: 600px; */
         text-align: center;
         
       }
       
       .bio {
         font-size: 1em;
-        position: relative;
-        bottom: 590px;
+        color: hsl(323, 100%, 28%);
+        position: absolute;
+        top: 57%;
+        left: 23%;
+/*         bottom: 590px; */
         text-align: center;
       }
       
@@ -91,11 +98,38 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        align-items: center;
-        position: relative;
+        position: absolute;
+        top: 65%;
+        left: 30%;
         width: 40vw;
-        border: 1px solid black;
+        gap: 10px;
+        align-items: center;
         
+      }
+      
+      #posts {
+        width: 10vw;
+      }
+      
+      #network {
+        width: 10vw;
+      }
+      
+      #stories {
+        width: 10vw;
+      }
+      
+      #saved {
+        width: 10vw;
+      }
+      
+      #tagged {
+        width: 10vw;
+
+      }
+      
+      #customize {
+        width: 10vw;
       }
       
     
@@ -121,15 +155,12 @@
     
       <nav class="menu">
         
-        <a href="#"> posts </a>
-        <a href="#"> network </a>
-        <a href="#"> stories </a>
-        <a href="#"> saved </a>
-        <a href="#"> tagged </a>
-        <a href="#"> customize </a>
-    
-      
-    
+        <a href="#"> <img id="posts" src="posts.png" alt="posts icon"> </a>
+        <a href="#"> <img id="network" src="network.png" alt="network icon"> </a>
+        <a href="#"> <img id="stories" src="stories.png" alt="stories icon"> </a>
+        <a href="#"> <img id="saved" src="saved.png" alt="saved icon"> </a>
+        <a href="#"> <img id="tagged" src="tagged.png" alt="tagged icon"> </a>
+        <a href="#"> <img id="customize" src="customize.png" alt="customize icon"> </a>
     
       </nav>
     
