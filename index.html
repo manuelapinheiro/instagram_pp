@@ -40,6 +40,7 @@
       }
       
       .pp {
+        display: block;
         width: 50vw;
         position: relative;
         bottom: 500px;
@@ -53,22 +54,47 @@
         width: 50vw;
         border-radius: 50%;
         box-shadow: 4px 0px 49px 9px rgba(0,0,0,0.75);
+        margin: auto;
 
       }
       
-/*       @media (max-width: 500px){
+      @media (min-width: 600px){
         .pp {
-          width: 25vw;
-          bottom: 500px;
+          width: 10vw;
+/*           max-width: 150px;
+          position: relative;
+          top: 50%;
           left: 50%;
+          transform: translate(-50%, -50%); */
         }
-      } */
+      }
       
       .name {
         
-        font-size: 30px;
-        bottom: 500px;
-        left: 50%;
+        font-size: 3em;
+        font-weight: bold;
+        position: relative;
+        bottom: 600px;
+        text-align: center;
+        
+      }
+      
+      .bio {
+        font-size: 1em;
+        position: relative;
+        bottom: 590px;
+        text-align: center;
+      }
+      
+      .menu {
+        
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+        width: 40vw;
+        border: 1px solid black;
         
       }
       
@@ -86,8 +112,26 @@
       </div>
     
       <div class="name"> 
-        Manu 
+        manu 
       </div>
+    
+      <div class="bio">
+        somewhere between rio and chicago
+      </div>
+    
+      <nav class="menu">
+        
+        <a href="#"> posts </a>
+        <a href="#"> network </a>
+        <a href="#"> stories </a>
+        <a href="#"> saved </a>
+        <a href="#"> tagged </a>
+        <a href="#"> customize </a>
+    
+      
+    
+    
+      </nav>
     
   </body>
 </html>
