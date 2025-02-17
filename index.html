@@ -52,12 +52,12 @@
         background-size: cover;
         background-position: center;
       }
-      
       .pp {
         display: block;
         position: absolute;
-        left: 35%;
+        left: 34%;
         bottom: 430px;
+        align-items: center;
       }
       
       #me {
@@ -194,15 +194,39 @@
         transition: all 0.5s;
       }
       
+      @keyframes floater {
+        0%{transform: translateX(-1%);transition: ease 0.5s}
+        25%{transform: translateY(-1%);transition: ease 0.5s}
+        50%{transform: translateX(-1%);transition: ease 0.5s}
+        75%{transform: translateY(-1%);transition: ease 0.5s}
+      }
+      
+      @keyframes floater2 {
+        0%{transform: translateX(1%);transition: ease 0.5s}
+        25%{transform: translateY(1%);transition: ease 0.5s}
+        50%{transform: translateX(1%);transition: ease 0.5s}
+        75%{transform: translateY(1%);transition: ease 0.5s}
+      }
+      
+      @keyframes floater3 {
+        0%{transform: translateY(1%);transition: ease 0.5s}
+        25%{transform: translateX(1%);transition: ease 0.5s}
+        50%{transform: translateY(1%);transition: ease 0.5s}
+        75%{transform: translateX(1%);transition: ease 0.5s}
+      }
+      
       .turtle {
         position: fixed;
         top: 20px;
         left: 8%;
+        display: flex;
       }
       
       #turtle {
         width: 60px;
         box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        animation: floater 4s infinite;
+        transition: ease 0.5s;
       }
       
       #turtle:hover {
@@ -214,12 +238,15 @@
       .nyc {
         position: fixed;  
         top: 100px;       
-        left: 75%;        
+        left: 75%;   
+        display: flex;
       }
       
       #nyc {
         width: 90px;
         box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        animation: floater 4s infinite;
+        transition: ease 0.5s;
       }
       
       #nyc:hover {
@@ -232,11 +259,14 @@
         position: fixed;
         top: 25px;
         left: 60%;
+        display: flex;
       }
       
       #science {
         width: 120px;
         box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        animation: floater2 4s infinite;
+        transition: ease 0.5s;
       }
       
       #science:hover {
@@ -249,11 +279,14 @@
         position: fixed;
         top: 60px;
         left: 17%;
+        display: flex;
       }
       
       #goat {
         width: 120px;
         box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        animation: floater2 4s infinite;
+        transition: ease 0.5s;
       }
       
       #goat:hover {
@@ -262,10 +295,45 @@
         transition: all 0.2s;
       }
       
-      .beach {
+      .senior {
         position: fixed;
-        top: 50px;
-        left: 20%;
+        top: 35px;
+        left: 30%;
+        display: flex;
+      }
+      
+      #senior {
+        width: 80px;
+        box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        animation: floater3 4s infinite;
+        transition: ease 0.5s;
+      }
+      
+      #senior:hover {
+        width: 85px;
+        box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        transition: all 0.2s;
+      }
+      
+      .hallow {
+        position: fixed;
+        top: 45px;
+        left: 85%;
+        display: flex;
+      }
+      
+      #hallow {
+        width: 70px;
+        box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        animation: floater3 4s infinite;
+        transition: ease 0.5s;
+
+      }
+      
+      #hallow:hover {
+        width: 75px;
+        box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
+        transition: all 0.2s;
       }
     
     </style>
@@ -316,8 +384,12 @@
       <img id="goat" src="goat.png" alt="petting some goats :)">
       </div>
     
-      <div class="beach">
-      <img id="beach" src="beach.png" alt="pretty beach">
+      <div class="senior">
+      <img id="senior" src="senior.png" alt="first day of senior year!">
+      </div>
+    
+      <div class="hallow">
+      <img id="hallow" src="hallow.png" alt="halloween!!!">
       </div>
     
     
