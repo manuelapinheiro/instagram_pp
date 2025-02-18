@@ -242,6 +242,9 @@
         top: 20px;
         left: 8%;
         display: flex;
+        border: none;
+        background: none;
+        cursor: pointer;
       }
       
       #turtle {
@@ -249,6 +252,7 @@
         box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
         animation: floater 4s infinite;
         transition: ease 0.5s;
+        
       }
       
       #turtle:hover {
@@ -357,6 +361,18 @@
         box-shadow: 0px 0px 52px 1px rgba(0,0,0,0.75);
         transition: all 0.2s;
       }
+      
+      #turtle2 {
+        width: 70vw;
+        max-width: 400px;
+        display: none;
+      }
+      
+      .turtle:focus + .turtle2 {
+        display: block;
+      }
+      
+      
     
     </style>
     
@@ -390,8 +406,12 @@
     
       </nav>
     
-      <div class="turtle">
+      <button class="turtle">
       <img id="turtle" src="turtle.png" alt="turtle at the aquarium">
+      </button>
+    
+      <div class="turtle2">
+      <img id="turtle2" src="turtle.png" alt="turtle at the aquarium"> 
       </div>
     
       <div class="nyc">
@@ -413,6 +433,8 @@
       <div class="hallow">
       <img id="hallow" src="hallow.png" alt="halloween!!!">
       </div>
+    
+      
     
     
   </body>
