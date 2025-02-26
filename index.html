@@ -232,6 +232,11 @@
         75%{transform: translateX(1%);transition: ease 0.5s}
       }
       
+      main > img {
+        width: 100%;
+        cursor: pointer;
+      }
+      
       .turtle {
         position: fixed;
         top: 20px;
@@ -266,6 +271,7 @@
         display: none;
         justify-content: center;
         align-items: center;
+        z-index: 1;
         
       }
       
@@ -273,7 +279,7 @@
         width: 75%;
       }
       
-      #close_popup {
+      #closepop {
         position: absolute;
         top: 40px;
         right: 40px;
@@ -419,41 +425,44 @@
         <a href="#"> <img id="customize" src="customize.png" alt="customize icon"> </a>
     
       </nav>
-    
-      <div class="turtle">
+  
+      <div class="turtle post">
       <img id="turtle" src="turtle.png" alt="turtle at the aquarium">
       </div>
     
-      <section id="turtle_pop">
+      <div id="turtle_pop">
         <span id="closepop">×</span>
         <img src="turtle.png" alt="turtle at the aquarium">
-      </section>
+      </div>
+
     
-      <div class="nyc">
+    
+    
+      <div class="nyc post">
         <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/nyc.png" target="_blank">
         <img id="nyc" src="nyc.png" alt="friends in nyc">
         </a>
       </div>
     
-      <div class="science">
+      <div class="science post">
         <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/science.png" target="_blank">
         <img id="science" src="science.png" alt="yay science!">
         </a>
       </div>
     
-      <div class="goat">
+      <div class="goat post">
         <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/goat.png" target="_blank">
         <img id="goat" src="goat.png" alt="petting some goats :)">
         </a>
       </div>
     
-      <div class="senior">
+      <div class="senior post">
         <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/senior.png" target="_blank">
         <img id="senior" src="senior.png" alt="first day of senior year!">
         </a>
       </div>
     
-      <div class="hallow">
+      <div class="hallow post">
         <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/hallow.png" target="_blank">
         <img id="hallow" src="hallow.png" alt="halloween!!!">
         </a>
@@ -465,13 +474,14 @@
 </html>
 
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+
 <script>
   /* global nn */
+  nn.on('load', setupImages)
   
-  
-  function displayPopup (e) {
+  function displayPopup (event) {
     // the clicked image
-    const img = e.target 
+    const img = event.target 
     // apply the "src" and "alt" of the clicked image
     // to the img inside the popup element
     nn.get('#turtle_pop > img')
@@ -487,15 +497,14 @@
   
   function setupImages () {
     // for each of the images in <main>
-    nn.getAll('main > img').forEach(img => {
+    nn.getAll('.post img').forEach(img => {
       // display the popup when img is clicked
       img.on('click', displayPopup)
     })
     
     // close popup when X is clicked
-    nn.get('#close-popup').on('click', closePopup)
+    nn.get('#closepop').on('click', closePopup)
   }
   
   // run the setupImages function when the page loads
-  nn.on('load', setupImages)
 </script>
