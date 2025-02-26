@@ -256,6 +256,33 @@
         transition: all 0.2s;
       }
       
+      #turtle_pop {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      
+      #turtle_pop > img {
+        width: 75%;
+      }
+      
+      #close_popup {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        font-size: 42px;
+        color: #fff;
+        cursor: pointer;
+        
+      }
+      
       .nyc {
         position: fixed;  
         top: 100px;       
@@ -394,8 +421,13 @@
       </nav>
     
       <div class="turtle">
-      <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/turtle.png" target="_blank"><img id="turtle" src="turtle.png" alt="turtle at the aquarium"></a> 
+      <img id="turtle" src="turtle.png" alt="turtle at the aquarium">
       </div>
+    
+      <section id="turtle_pop">
+        <span id="closepop">×</span>
+        <img src="turtle.png" alt="turtle at the aquarium">
+      </section>
     
       <div class="nyc">
         <a href="https://raw.githubusercontent.com/manuelapinheiro/instagram_pp/refs/heads/main/nyc.png" target="_blank">
@@ -431,3 +463,39 @@
     
   </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+<script>
+  /* global nn */
+  
+  
+  function displayPopup (e) {
+    // the clicked image
+    const img = e.target 
+    // apply the "src" and "alt" of the clicked image
+    // to the img inside the popup element
+    nn.get('#turtle_pop > img')
+      .set('src', img.src)
+      .set('alt', img.alt)
+    // display the popup element
+    nn.get('#turtle_pop').css({ display: 'flex' })
+  }
+  
+  function closePopup () {
+    nn.get('#turtle_pop').css({ display: 'none' })
+  }
+  
+  function setupImages () {
+    // for each of the images in <main>
+    nn.getAll('main > img').forEach(img => {
+      // display the popup when img is clicked
+      img.on('click', displayPopup)
+    })
+    
+    // close popup when X is clicked
+    nn.get('#close-popup').on('click', closePopup)
+  }
+  
+  // run the setupImages function when the page loads
+  nn.on('load', setupImages)
+</script>
